@@ -34,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           'facebook',
           style: TextStyle(
+            fontFamily: 'Klavika',
             color: AppColors.facebookBlue,
             fontSize: 28.sp,
             fontWeight: FontWeight.bold,

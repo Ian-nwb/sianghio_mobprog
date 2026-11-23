@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
           scrollBehavior: const _CleanScrollBehavior(),
           title: 'Facebook',
           theme: ThemeData(
+            fontFamily: 'Frutiger',
             primaryColor: AppColors.facebookBlue,
             scaffoldBackgroundColor: AppColors.background,
             appBarTheme: const AppBarTheme(
