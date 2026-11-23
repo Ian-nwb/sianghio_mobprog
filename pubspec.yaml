@@ -1,14 +1,18 @@
 name: sianghio_mobprog
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0+1
+version: 0.1.0
 
 environment:
-  sdk: ^3.13.5
+  sdk: ^3.10.1
 
 dependencies:
   flutter:
     sdk: flutter
+  # TODO: Replace 'surname' in the name above with your own surname.
+  # Example: name: castaneda_mobprog
+  flutter_screenutil: ^5.9.3
+  provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:
@@ -17,3 +21,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/images/
