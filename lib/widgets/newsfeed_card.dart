@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../constants.dart';
 import 'custom_text.dart';
-import 'assets/images/AVATAR.jpg';
 
 // One post in the newsfeed: avatar, name, date, post text,
 // an optional image, and the like, comment, and share row.
@@ -47,7 +46,7 @@ class NewsFeedCard extends StatelessWidget {
                 CircleAvatar(
                   radius: 20.r,
                   backgroundColor: AppColors.lightGrey,
-                  child: const Icon(Icons.person, color: AppColors.grey),
+                  backgroundImage: const AssetImage('assets/images/avatar.jpg'),
                 ),
                 SizedBox(width: 10.w),
                 Column(
@@ -130,6 +129,7 @@ class NewsFeedCard extends StatelessWidget {
                   icon: Icons.thumb_up_outlined,
                   label: 'Like',
                   onTap: onLike,
+                  color: AppColors.facebookBlue,
                 ),
                 _ActionButton(
                   icon: Icons.comment_outlined,
@@ -169,23 +169,27 @@ class _ActionButton extends StatelessWidget {
     required this.icon,
     required this.label,
     required this.onTap,
+    this.color = AppColors.grey,
   });
 
   final IconData icon;
   final String label;
   final VoidCallback onTap;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Icon(icon, color: AppColors.grey, size: 20),
-          SizedBox(width: 6.w),
-          CustomText(text: label, color: AppColors.grey),
-        ],
+    return TextButton.icon(
+      onPressed: onTap,
+      style: TextButton.styleFrom(
+        foregroundColor: color,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6.r),
+        ),
       ),
+      icon: Icon(icon, color: color, size: 20),
+      label: CustomText(text: label, color: color),
     );
   }
 }
