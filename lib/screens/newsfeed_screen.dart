@@ -14,6 +14,7 @@ class Post {
     required this.text,
     required this.likes,
     this.imageAsset,
+    this.avatarAsset,
   });
 
   final String authorName;
@@ -21,6 +22,7 @@ class Post {
   final String text;
   int likes;
   final String? imageAsset;
+  final String? avatarAsset;
 }
 
 class NewsFeedScreen extends StatefulWidget {
@@ -38,16 +40,18 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
       text: 'May Larper sa baba!',
       likes: 100,
       imageAsset: null,
+      avatarAsset: 'assets/images/avatar.png',
     ),
     Post(
       authorName: "John Paul Dela Cruz",
       date: 'December 2',
-      text: 'Hello Larpers! This is my first post on the newsfeed!',
+      text: 'New Profile Picture! What do you think?',
       likes: 200,
       // TODO: Add an image file named post_image.png to assets/images/,
       // or change this path to your own image. If the file is missing,
       // the card shows a grey placeholder instead of crashing.
       imageAsset: 'assets/images/post_image.png',
+      avatarAsset: 'assets/images/avatar2.png',
     ),
   ];
 
@@ -69,6 +73,7 @@ class _NewsFeedScreenState extends State<NewsFeedScreen> {
           text: post.text,
           likes: post.likes,
           imageAsset: post.imageAsset,
+          avatarAsset: post.avatarAsset,
           onLike: () => _likePost(index),
         );
       },

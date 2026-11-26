@@ -6,7 +6,7 @@ your own surname.
 
 ## Lab Discussion
 
-
+I imported and declared the path of my image and then i displayed it in my app.
 
 ## Run it
 
